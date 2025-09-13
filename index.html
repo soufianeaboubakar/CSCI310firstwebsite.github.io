@@ -1,1 +1,117 @@
-<h1> My portfolio </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1em;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    nav button:hover, nav button.active {
+      background-color: #666;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2em;
+      background: white;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #ddd;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My Personal Website</h1>
+  </header>
+
+  <nav>
+    <button class="tablink active" onclick="openTab(event, 'home')">Home</button>
+    <button class="tablink" onclick="openTab(event, 'about')">About</button>
+    <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tablink" onclick="openTab(event, 'contact')">Contact</button>
+  </nav>
+
+  <section id="home" class="tab-content active">
+    <h2>Home</h2>
+    <p>Welcome to my website! I'm glad you're here.</p>
+  </section>
+
+  <section id="about" class="tab-content">
+    <h2>About Me</h2>
+    <p>Hello! I'm a web developer and designer who loves creating interactive and user-friendly experiences.</p>
+  </section>
+
+  <section id="projects" class="tab-content">
+    <h2>Projects</h2>
+    <ul>
+      <li>Portfolio Website</li>
+      <li>To-Do App</li>
+      <li>Blog Platform</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p>Email: example@example.com</p>
+    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
+
+  <script>
+    function openTab(evt, tabName) {
+      const tabs = document.querySelectorAll(".tab-content");
+      const buttons = document.querySelectorAll(".tablink");
+
+      tabs.forEach(tab => tab.classList.remove("active"));
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
