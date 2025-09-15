@@ -20,18 +20,16 @@
 
     .welcome-section {
       text-align: center;
-      margin-bottom: 40px;
-  }
+      margin: 30px 0;
+    }
 
-  .welcome-images {
-    margin-top: 20px;
-  }
+    .welcome-section img {
+      width: 200px;
+      border-radius: 50%;
+      margin-top: 15px;
+    }
 
-  .welcome-images img {
-    margin: 10px;
-    border-radius: 10px;
-  }
-    nav {
+    .tab-buttons {
       background-color: #444;
       display: flex;
       justify-content: center;
@@ -39,7 +37,7 @@
       padding: 6px;
     }
 
-    nav button {
+    .tab-button {
       background: none;
       border: none;
       color: white;
@@ -50,8 +48,8 @@
       border-radius: 6px;
     }
 
-    nav button:hover,
-    nav button.active {
+    .tab-button:hover,
+    .tab-button.active {
       background-color: #666;
     }
 
@@ -63,19 +61,18 @@
       margin: 1.5em auto;
       border-radius: 8px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      text-align: center;
     }
 
     .tab-content.active {
       display: block;
     }
-    
-    .intro-photo {
-      display: block;       /* makes it behave like a block element */
-      margin: 20px auto;    /* centers it horizontally */
-      width: 200px;          /* optional: set a fixed size */
-      border-radius: 10px;  /* optional: round corners */
-    }
 
+    .tab-content img {
+      width: 300px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
 
     footer {
       text-align: center;
@@ -86,67 +83,65 @@
   </style>
 </head>
 <body>
-  <div class="welcome-section">
-    <img src="image1.jpg" alt="Photo of me" width="200">
-  </div>
 
-  <header>
+  <!-- WELCOME SECTION -->
+  <div class="welcome-section">
     <h1>Welcome to My Personal Website</h1>
-  </header>
+    <img src="images/me.jpg" alt="Photo of me">
+  </div>
 
   <!-- MAIN 5 TABS -->
   <div class="tab-buttons">
-  <button class="tab-button active" onclick="openTab(event, 'work')">Work</button>
-  <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
-  <button class="tab-button" onclick="openTab(event, 'hobbies')">Hobbies</button>
-  <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
-  <button class="tab-button" onclick="openTab(event, 'family')">Family</button>
-</div>
+    <button class="tab-button active" onclick="openTab(event, 'work')">Work</button>
+    <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tab-button" onclick="openTab(event, 'hobbies')">Hobbies</button>
+    <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
+    <button class="tab-button" onclick="openTab(event, 'family')">Family</button>
+  </div>
 
-<div id="work" class="tab-content active">
-  <h2>Work</h2>
-  <img src="images/work" alt="Work photo" width="300">
-  <p>Description of your work life.</p>
-</div>
+  <!-- TAB CONTENTS -->
+  <div id="work" class="tab-content active">
+    <h2>Work</h2>
+    <img src="images/work.jpg" alt="Work photo">
+    <p>Description of your work life.</p>
+  </div>
 
-<div id="projects" class="tab-content">
-  <h2>Projects</h2>
-  <img src="images/projects.jpg" alt="Project photo" width="300">
-  <p>Some of your favorite projects.</p>
-</div>
+  <div id="projects" class="tab-content">
+    <h2>Projects</h2>
+    <img src="images/projects.jpg" alt="Project photo">
+    <p>Some of your favorite projects.</p>
+  </div>
 
-<div id="hobbies" class="tab-content">
-  <h2>Hobbies</h2>
-  <img src="images/hobbies.jpg" alt="Hobby photo" width="300">
-  <p>Fun hobbies you enjoy doing.</p>
-</div>
+  <div id="hobbies" class="tab-content">
+    <h2>Hobbies</h2>
+    <img src="images/hobbies.jpg" alt="Hobby photo">
+    <p>Fun hobbies you enjoy doing.</p>
+  </div>
 
-<div id="experience" class="tab-content">
-  <h2>Experience</h2>
-  <img src="images/experience.jpg" alt="Experience photo" width="300">
-  <p>Where you’ve worked or learned.</p>
-</div>
+  <div id="experience" class="tab-content">
+    <h2>Experience</h2>
+    <img src="images/experience.jpg" alt="Experience photo">
+    <p>Where you’ve worked or learned.</p>
+  </div>
 
-<div id="family" class="tab-content">
-  <h2>Family</h2>
-  <img src="images/family.jpg" alt="Family photo" width="300">
-  <p>Information about your family.</p>
-</div>
+  <div id="family" class="tab-content">
+    <h2>Family</h2>
+    <img src="images/family.jpg" alt="Family photo">
+    <p>Information about your family.</p>
+  </div>
 
+  <footer>
+    <p>© 2025 Your Name — All rights reserved.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
   <script>
-    document.querySelectorAll('.tablink').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const target = btn.dataset.target;
-        openTab(e, target);
-      });
-    });
-
     function openTab(evt, tabName) {
       const tabs = document.querySelectorAll(".tab-content");
-      const buttons = document.querySelectorAll(".tablink");
+      const buttons = document.querySelectorAll(".tab-button");
 
       tabs.forEach(tab => tab.classList.remove("active"));
-      buttons.forEach(b => b.classList.remove("active"));
+      buttons.forEach(btn => btn.classList.remove("active"));
 
       const panel = document.getElementById(tabName);
       if (panel) panel.classList.add("active");
@@ -156,5 +151,3 @@
 
 </body>
 </html>
-
-
