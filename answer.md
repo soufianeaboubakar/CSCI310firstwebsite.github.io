@@ -8,6 +8,10 @@
     - https://www.google.com/search?sca_esv=f79ae1808813365b&udm=7&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZud1z6kQpMfoEdCJxnpm_3W-pLdZZVzNY_L9_ftx08kwv-_tUbRt8pOUS8_MjaceHuSAD6YvWZ0rfFzwmtmaBgLepZn2IJkVH-w3cPU5sPVz9l1Pp06apNShUnFfpGUJOF8p91U6HxH3ukND0OVTTVy0CGuHNdViLZqynGb0mLSRGeGVO46qnJ_2yk3F0uV6R6BW9rQ&q=how+to+run+html+file+with+your+image+saved+github&sa=X&ved=2ahUKEwiotM7yqtiPAxWl6ckDHYrHDHYQtKgLegQIExAB&biw=1440&bih=812&dpr=2#fpstate=ive&vld=cid:ed707684,vid:LVVi30Aw54Q,st:0
     - Index for html code that sumarizes
     
-    
+    Used good amount of chatgpt for good formating and text organization, the text organization helped me with organizing code that belonged right on the html. 
+
+    Used the google videos to help me create the repository and how to post and publish the website live.
+
+    Used stackoverflow to view the syntax of different usage of html or the way how things are suppose to format correctly. 
    
    */
