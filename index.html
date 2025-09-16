@@ -1,16 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Personal Website</title>
+  <title>My Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f4f4;
+      background: lightblue;  /* or use #add8e6 */
     }
+
+  .welcome-section {
+  text-align: center;
+  margin: 30px 0;
+  background-color: #ffe4b5; /* light orange background */
+  padding: 30px;
+}
 
     header {
       background-color: #333;
@@ -19,23 +25,38 @@
       text-align: center;
     }
 
-    nav {
+    .welcome-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .welcome-section img {
+      width: 200px;
+      border-radius: 50%;
+      margin-top: 15px;
+    }
+
+    .tab-buttons {
       background-color: #444;
       display: flex;
       justify-content: center;
+      gap: 6px;
+      padding: 6px;
     }
 
-    nav button {
+    .tab-button {
       background: none;
       border: none;
       color: white;
-      padding: 1em;
+      padding: 0.8em 1.2em;
       cursor: pointer;
       font-size: 16px;
-      transition: background 0.3s;
+      transition: background 0.2s;
+      border-radius: 6px;
     }
 
-    nav button:hover, nav button.active {
+    .tab-button:hover,
+    .tab-button.active {
       background-color: #666;
     }
 
@@ -43,12 +64,21 @@
       display: none;
       padding: 2em;
       background: white;
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin: 1.5em auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      text-align: center;
     }
 
     .tab-content.active {
       display: block;
+    }
+
+    .tab-content img {
+      width: 300px;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
     footer {
@@ -60,103 +90,112 @@
   </style>
 </head>
 <body>
-  div class="tab-buttons">
-    <button class="tab-button active" onclick="openTab(event, 'tab1')">Tab 1</button>
-    <button class="tab-button" onclick="openTab(event, 'tab2')">Tab 2</button>
-    <button class="tab-button" onclick="openTab(event, 'tab3')">Tab 3</button>
-    <button class="tab-button" onclick="openTab(event, 'tab4')">Tab 4</button>
-    <button class="tab-button" onclick="openTab(event, 'tab5')">Tab 5</button>
-  </div>
 
-  <div id="tab1" class="tab-content active">
-    <h2>Content for Tab 1</h2>
-    <p>This is the content for the first tab.</p>
-  </div>
-
-  <div id="tab2" class="tab-content">
-    <h2>Content for Tab 2</h2>
-    <p>This is the content for the second tab.</p>
-  </div>
-
-  <div id="tab3" class="tab-content">
-    <h2>Content for Tab 3</h2>
-    <p>This is the content for the third tab.</p>
-  </div>
-
-  <div id="tab4" class="tab-content">
-    <h2>Content for Tab 4</h2>
-    <p>This is the content for the fourth tab.</p>
-  </div>
-
-  <div id="tab5" class="tab-content">
-    <h2>Content for Tab 5</h2>
-    <p>This is the content for the fifth tab.</p>
-  </div>
-  <header>
+  <!-- WELCOME SECTION -->
+  <div class="welcome-section">
     <h1>Welcome to My Personal Website</h1>
-  </header>
+    <img src="image1.jpg" alt="Photo of me">
+  </div>
 
-  <nav>
-    <button class="tablink active" onclick="openTab(event, 'home')">Home</button>
-    <button class="tablink" onclick="openTab(event, 'about')">About</button>
-    <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
-    <button class="tablink" onclick="openTab(event, 'contact')">Contact</button>
-  </nav>
+  <!-- MAIN 5 TABS -->
+  <div class="tab-buttons">
+  <button class="tab-button active" onclick="openTab(event, 'work')">Work</button>
+  <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+  <button class="tab-button" onclick="openTab(event, 'hobbies')">Hobbies</button>
+  <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
+  <button class="tab-button" onclick="openTab(event, 'family')">Family</button>
+  <button class="tab-button" onclick="openTab(event, 'goals')">Goals</button> <!-- NEW -->
+</div>
+    <button class="tab-button active" onclick="openTab(event, 'work')">Work</button>
+    <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tab-button" onclick="openTab(event, 'hobbies')">Hobbies</button>
+    <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
+    <button class="tab-button" onclick="openTab(event, 'family')">Family</button>
+    <button class="tab-button" onclick="openTab(event, 'goals')">Goals</button> <!-- NEW -->
+ </div>
 
-  <section id="home" class="tab-content active">
-    <h2>Home</h2>
-    <p>Welcome to my website! I'm glad you're here.</p>
-  </section>
+  <!-- TAB CONTENTS -->
+  <div id="work" class="tab-content active">
+    <h2>Work</h2>
+    <img src="country_image.jpg.png" alt="Work photo">
+    <p>
+      Hi, I'm Soufiane Aboubakar. I'm passionate about technology.
+      My recent work experiences have been at retail, fast food, and seasonal 
+      service events that are paid.
+    </p>
+  </div>
 
-  <section id="about" class="tab-content">
-    <h2>About Me</h2>
-    <p>Hello! I'm a web developer and designer who loves creating interactive and user-friendly experiences.</p>
-  </section>
-
-  <section id="projects" class="tab-content">
+  <div id="projects" class="tab-content">
     <h2>Projects</h2>
-    <ul>
-      <li>Portfolio Website</li>
-      <li>To-Do App</li>
-      <li>Blog Platform</li>
-    </ul>
-  </section>
+    <img src="universities.jpg" alt="Project photo">
+    <p> Made two personal projects on C++ and C. These are basic game projects, nothing real world based
+      - First project was a payroll management system project
+      - The second project was a binary search tree depth projects on a dataset
+    </p>
+  </div>
 
-  <section id="contact" class="tab-content">
-    <h2>Contact</h2>
-    <p>Email: example@example.com</p>
-    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
-  </section>
+  <div id="hobbies" class="tab-content">
+    <h2>Hobbies</h2>
+    <img src="image4.jpg.png" alt="Hobbies photo">
+    <p>
+      I enjoy soccer, photography, learning languages and different cultures during my free time 
+      <br>- Played soccer and love watching it through different leagues
+      <br>- Like photography, I can't shoot photos well but decent at editing
+      <br>- Love learning about different languages and cultures, it brings us together.
+      <br>Want to travel to many place and want to make the best of my travel experience by 
+      talking to natives from that area.
+    </p>
+  </div>
+
+  <div id="experience" class="tab-content">
+    <h2>Experience</h2>
+    <img src="IMG_8049.jpeg" alt="Experience photo">
+    <p>
+      Worked on troubleshooting computers, phones, screen fixing and diagnostics for a couple of months
+      <br>- Know a good amount of software and what different phones require on their system
+      <br>- Have two personal projects that are not real world based, but helped me in sense of creating projects
+      <br>- Leetcode/Geeksforgeeks
+    </p>
+  </div>
+
+ <div id="goals" class="tab-content">
+  <h2>Goals</h2>
+  <img src="images/family.jpg" alt="Goals photo">
+  <p>
+    Life goals within computer science or non computer science field:  
+    <br><br>
+    <strong>Long term goals:</strong>
+    <ul>
+      <li>Work in FAANG or a big computer science company with good reputation</li>
+      <li>Become religiously focused</li>
+    </ul>
+    <strong>Short term goals:</strong>
+    <ul>
+      <li>Summer SWE internship</li>
+      <li>Win nationals with my club soccer team</li>
+    </ul>
+  </p>
+</div>
+
 
   <footer>
-    <p>&copy; 2025 Your Name</p>
+    <p>© 2025 Your Name — All rights reserved.</p>
   </footer>
 
+  <!-- JAVASCRIPT -->
   <script>
     function openTab(evt, tabName) {
       const tabs = document.querySelectorAll(".tab-content");
-      const buttons = document.querySelectorAll(".tablink");
+      const buttons = document.querySelectorAll(".tab-button");
 
       tabs.forEach(tab => tab.classList.remove("active"));
       buttons.forEach(btn => btn.classList.remove("active"));
 
-      document.getElementById(tabName).classList.add("active");
+      const panel = document.getElementById(tabName);
+      if (panel) panel.classList.add("active");
       evt.currentTarget.classList.add("active");
     }
-    
-    $(function(){
-	  $('.repeat').click(function(){
-    	var classes =  $(this).parent().attr('class');
-        $(this).parent().attr('class', 'animate');
-        var indicator = $(this);
-        setTimeout(function(){ 
-        	$(indicator).parent().addClass(classes);
-        }, 20);
-    });
-  });
   </script>
-
-
 
 </body>
 </html>
