@@ -1,144 +1,249 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Personal Website</title>
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: lightblue;  
+    }
+
+    .welcome-section {
+      text-align: center;
+      margin: 30px 0;
+      background-color: #ffe4b5;
+      padding: 30px;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1em 0;
+      text-align: center;
+    }
+
+    .welcome-section img {
+      width: 200px;
+      border-radius: 50%;
+      margin-top: 15px;
+    }
+
+    .tab-buttons {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px;
+    }
+
+    .tab-button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 0.8em 1.2em;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+      border-radius: 6px;
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      background-color: #666;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2em;
+      background: white;
+      max-width: 900px;
+      margin: 1.5em auto;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content img {
+      width: 300px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #ddd;
+      margin-top: 2em;
+    }
+    
+    .animated-welcome {
+        animation: fadeSlideIn 1.2s ease-out forwards;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+  }
   
-  <link rel = "stylesheet" type = "text/css" href = "my_try.css" />
-<script type = "text/javascript" href = "javascript_animation.js"></script>
+  .tab-content.animate-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.tab-content.animate-in {
+  animation: slideLeft 0.5s ease-out;
+}
+
+
+}
+
   </style>
-  
 </head>
 <body>
-  div class="tab-buttons">
-    <button class="tab-button active" onclick="openTab(event, 'tab1')">Tab 1</button>
-    <button class="tab-button" onclick="openTab(event, 'tab2')">Tab 2</button>
-    <button class="tab-button" onclick="openTab(event, 'tab3')">Tab 3</button>
-    <button class="tab-button" onclick="openTab(event, 'tab4')">Tab 4</button>
-    <button class="tab-button" onclick="openTab(event, 'tab5')">Tab 5</button>
-  </div>
 
-  <div id="tab1" class="tab-content active">
-    <h2>Content for Tab 1</h2>
-    <p>This is the content for the first tab.</p>
-  </div>
-
-  <div id="tab2" class="tab-content">
-    <h2>Content for Tab 2</h2>
-    <p>This is the content for the second tab.</p>
-  </div>
-
-  <div id="tab3" class="tab-content">
-    <h2>Content for Tab 3</h2>
-    <p>This is the content for the third tab.</p>
-  </div>
-
-  <div id="tab4" class="tab-content">
-    <h2>Content for Tab 4</h2>
-    <p>This is the content for the fourth tab.</p>
-  </div>
-
-  <div id="tab5" class="tab-content">
-    <h2>Content for Tab 5</h2>
-    <p>This is the content for the fifth tab.</p>
-  </div>
   <header>
-    <h1>Welcome to My Personal Website</h1>
+    <h1>My Portfolio</h1>
+    <h2 class="animated-welcome">Welcome to my project section</h2>
+
   </header>
 
-  <nav>
-    <button class="tablink active" onclick="openTab(event, 'home')">Home</button>
-    <button class="tablink" onclick="openTab(event, 'about')">About</button>
-    <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
-    <button class="tablink" onclick="openTab(event, 'contact')">Contact</button>
-  </nav>
+  
+  
+  
 
-  <section id="home" class="tab-content active">
-    <h2>Home</h2>
-    <p>Welcome to my website! I'm glad you're here.</p>
-  </section>
+  <!-- MAIN 5 TABS -->
+  <div class="tab-buttons">
+    <button class="tab-button active" onclick="openTab(event, 'work')">Work</button>
+    <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tab-button" onclick="openTab(event, 'hobbies')">Hobbies</button>
+    <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
+    <button class="tab-button" onclick="openTab(event, 'goals')">Goals</button>
+  </div>
 
-  <section id="about" class="tab-content">
-    <h2>About Me</h2>
-    <p>Hello! I'm a web developer and designer who loves creating interactive and user-friendly experiences.</p>
-  </section>
+  <!-- TAB CONTENTS -->
+  <div id="work" class="tab-content active">
+    <h2>Work</h2>
+    <img src="country_image.jpg.png" alt="Work photo">
+    <p>
+      Hi, I'm Soufiane Aboubakar. I'm passionate about technology.
+      My recent work experiences have been at retail, fast food, and seasonal 
+      service events that are paid.
+    </p>
+  </div>
 
-  <section id="projects" class="tab-content">
+  <div id="projects" class="tab-content">
     <h2>Projects</h2>
-    <ul>
-      <li>Portfolio Website</li>
-      <li>To-Do App</li>
-      <li>Blog Platform</li>
-    </ul>
-  </section>
+    <img src="universities.jpg" alt="Project photo">
+    <p>
+      Made two personal projects on C++ and C. These are basic game projects, nothing real world based:
+      <br>- First project was a payroll management system project.
+      <br>- The second project was a binary search tree depth project on a dataset.
+    </p>
+  </div>
 
-  <section id="contact" class="tab-content">
-    <h2>Contact</h2>
-    <p>Email: example@example.com</p>
-    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
-  </section>
+  <div id="hobbies" class="tab-content">
+    <h2>Hobbies</h2>
+    <img src="image4.jpg.png" alt="Hobbies photo">
+    <p>
+      I enjoy soccer, photography, learning languages and different cultures during my free time. 
+      <br>- Played soccer and love watching it through different leagues.
+      <br>- Like photography — I can't shoot photos well but decent at editing.
+      <br>- Love learning about different languages and cultures. It brings us together.
+      <br>- I want to travel and talk to natives from the places I visit.
+    </p>
+  </div>
+
+  <div id="experience" class="tab-content">
+    <h2>Experience</h2>
+    <img src="IMG_8049.jpeg" alt="Experience photo">
+    <p>
+      Worked on troubleshooting computers, phones, screen fixing and diagnostics for a couple of months.
+      <br>- Know a good amount of software and phone system requirements.
+      <br>- Have two personal projects that helped me grow technically.
+      <br>- Experience with platforms like Leetcode and GeeksforGeeks.
+    </p>
+  </div>
+
+  <div id="goals" class="tab-content">
+    <h2>Goals</h2>
+    <img src="universities.jpg" alt="Goals photo">
+    <p>
+      Life goals within and beyond computer science:
+    </p>
+    <strong>Long term goals:</strong>
+    <ul>
+      <li>Work in FAANG or a reputable tech company</li>
+      <li>Become more spiritually focused</li>
+    </ul>
+    <strong>Short term goals:</strong>
+    <ul>
+      <li>Summer SWE internship</li>
+      <li>Win nationals with my club soccer team</li>
+    </ul>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Your Name</p>
+    <p>© 2025 Your Name — All rights reserved.</p>
   </footer>
 
+  <!-- JAVASCRIPT -->
+  <script>
+    // Default tab switcher
+    function openTab(evt, tabName) {
+  const tabs = document.querySelectorAll(".tab-content");
+  const buttons = document.querySelectorAll(".tab-button");
+
+  tabs.forEach(tab => {
+    tab.classList.remove("active", "animate-in");
+  });
+  buttons.forEach(btn => btn.classList.remove("active"));
+
+  const panel = document.getElementById(tabName);
+  if (panel) {
+    panel.classList.add("active");
+    
+    // 🔥 Add animation class AFTER forcing reflow (retrigger animation)
+    void panel.offsetWidth; // Trigger reflow
+    panel.classList.add("animate-in");
+  }
+
+  if (evt) evt.currentTarget.classList.add("active");
+}
+
+  </script>
 
 </body>
 </html>
+ 
 
-<div class="container">
-  <!--<div class="take-input">
-     <input type="text" placeholder="Write any text" />
-    <a href="javascript:void(0);">Enter Text</a>
-  </div>-->
-  <div class="animate seven">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-		</div>
-  
-		<div class="animate one">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-		</div>
-
-		<div class="animate two">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-		</div>
-
-		<div class="animate three">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-		</div>
-
-		<div class="animate four">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-		</div>
-
-		<div class="animate five">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-		</div>
-
-		<div class="animate six">
-			<span>c</span><span>s</span><span>s</span><span>3</span> &nbsp;
-			<span>a</span><span>n</span><span>i</span><span>m</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
-      
-      <a class="repeat" href="javascript:void(0);">Repeat Animation</a>
-		</div>
-	</div>
