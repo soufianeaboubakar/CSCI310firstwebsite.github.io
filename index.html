@@ -211,16 +211,137 @@
 .goals-tab.animate-in {
   animation: fadeUpScale 0.6s ease-out;
 }
+/* Overall list spacing */
+.experience-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Job position container */
+.job-position {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Job title */
+.job-title {
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+/* Dates */
+.job-dates {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Project/company name */
+.project-name {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 26px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Bullet points */
+.job-description {
+  margin-left: 20px;
+  font-family: 'Verdana', sans-serif;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Style the entire experience list */
+.experience-list {
+  margin-top: 20px;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Job title */
+.job-title {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  color: #1e3d59; /* Navy Blue */
+}
+
+/* Dates */
+.job-dates {
+  font-size: 14px;
+  color: #888; /* Gray */
+  font-family: 'Courier New', monospace;
+}
+
+/* Project / company name */
+.project-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0b7fab; /* Light Blue */
+  margin-bottom: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+/* Bullet points or job description */
+.job-description {
+  margin-left: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  font-family: 'Arial', sans-serif;
+}
+.game-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background-color: #007acc;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.game-link:hover {
+  background-color: #005f99;
+  text-decoration: underline;
+}
+.home-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
 
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>My Portfolio</h1>
-    <h2 class="animated-welcome">Welcome to my project section</h2>
+ <header>
+  <h1>My Portfolio</h1>
+  <h2 class="animated-welcome">Welcome to my project section</h2>
+  <img src="image1.jpg" alt="Profile Photo" class="home-photo">
+  
+</header>
+  
 
-  </header>
+  
+
 
   
   
@@ -228,14 +349,33 @@
 
   <!-- MAIN 5 TABS -->
   <div class="tab-buttons">
-    <button class="tab-button active" onclick="openTab(event, 'work')">Work</button>
+    <button class="tab-button active" onclick="openTab(event, 'Home')">Home</button>
     <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
     <button class="tab-button" onclick="openTab(event, 'hobbies')">Hobbies</button>
     <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
-    <button class="tab-button" onclick="openTab(event, 'goals')">Goals</button>
   </div>
 
   <!-- TAB CONTENTS -->
+<div id="Home" class="tab-content active">
+  <img src="country_image.jpg.png" alt="Home photo" class="section-photo">
+  <p>
+    I'm from Niger, Africa.
+  </p>
+  <p>
+    <strong>Certifications:</strong><br>
+    - No certifications yet, but expecting two by April:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- COMPTIA+<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- CEH certification
+  </p>
+  <p>
+    <strong>CSCI/Math classes ✅</strong><br>
+    (CSCI155) (CSCI156) (CSCI240) (CSCI230)<br>
+    (CSCI370) (CSCI340) (MATH180) (MATH190)<br>
+    (MATH191) (MATH195)
+  </p>
+</div>
+
+
 
 
   <div id="projects" class="tab-content">
@@ -252,97 +392,70 @@
     </p>
   </div>
 
+  
+</ul>
+
   <div id="hobbies" class="tab-content">
     <h2>Hobbies</h2>
     <img src="image4.jpg.png" alt="Hobbies photo">
-    <a href="https://spinthewheel.app/languages">link text</a>
+    <a href="https://spinthewheel.app/languages" class="game-link" target="_blank">Play Language Game</a>
+
     <p>
-      I enjoy soccer, photography, learning languages and different cultures during my free time. 
-      <br>- Played soccer and love watching it through different leagues.
-      <br>- Like photography — I can't shoot photos well but decent at editing.
-      <br>- Love learning about different languages and cultures. It brings us together.
-      <br>- I want to travel and talk to natives from the places I visit.
+     
+      <br>- Running miles, practicing soccer
+      <br>- Leetcoding/trying to solve cs questions
+      <br>- learn different languages and cultures
+      <br>- cooking trying new things
     </p>
   </div>
 
-    <div class="workExperience">
-  <h2>
-    Work experience
-  </h2>
+  <div id="experience" class="tab-content">
+  <h2>Experience</h2>
+  <img src="IMG_8049.jpeg" alt="Experience photo">
+
   <ul>
     <li>
       <div class="jobPosition">
-        <span class="bolded">
-          Accountant
-        </span>
-        <span>
-          Jun 2014 - Sept 2015
-        </span>
-     
-      <div class="projectName bolded">
-        <span>
-          Accounting project name | Company name
-        </span>
+        <span class="bolded">Accountant</span>
+        <span>Jun 2014 - Sept 2015</span>
+        <div class="projectName bolded">
+          <span>Accounting project name | Company name</span>
+        </div>
       </div>
     </li>
+
     <li>
       <div class="jobPosition">
-        <span class="bolded">
-          Digital Marketing Expert
-        </span>
-        <span>
-          Nov 2020 - Sept 2021
-        </span>
+        <span class="bolded">Digital Marketing Expert</span>
+        <span>Nov 2020 - Sept 2021</span>
       </div>
       <div class="projectName bolded">
-        <span>
-          Project name | Company name
-        </span>
-      </div> 
+        <span>Project name | Company name</span>
+      </div>
     </li>
+
     <li>
       <div class="jobPosition">
-        <span class="bolded">
-          Accountant
-        </span>
-        <span>
-          Jun 2017 - May 2020
-        </span>
+        <span class="bolded">Accountant</span>
+        <span>Jun 2017 - May 2020</span>
       </div>
       <div class="projectName bolded">
-        <span>
-         Project name | Company name
-        </span>
+        <span>Project name | Company name</span>
       </div>
       <p>
-      - Worked on troubleshooting computers, phones, screen fixing and diagnostics for a couple of months.
-      - Know a good amount of software and phone system requirements.
-      - Have two personal projects that helped me grow technically.
-      - Experience with platforms like Leetcode and GeeksforGeeks.
+        - Worked on troubleshooting computers, phones, screen fixing and diagnostics for a couple of months.<br>
+        - Know a good amount of software and phone system requirements.<br>
+        - Have two personal projects that helped me grow technically.<br>
+        - Experience with platforms like Leetcode and GeeksforGeeks.
       </p>
     </li>
   </ul>
 </div>
+
+    
  
   
-  
-  <div id="goals" class="tab-content">
-    <h2>Goals</h2>
-    <img src="universities.jpg" alt="Goals photo">
-    <p>
-      Life goals within and beyond computer science:
-    </p>
-    <strong>Long term goals:</strong>
-    <ul>
-      <li>Work in FAANG or a reputable tech company</li>
-      <li>Become more spiritually focused</li>
-    </ul>
-    <strong>Short term goals:</strong>
-    <ul>
-      <li>Summer SWE internship</li>
-      <li>Win nationals with my club soccer team</li>
-    </ul>
-  </div>
+
 
   <footer>
     <p>© 2025 Your Name — All rights reserved.</p>
@@ -375,10 +488,12 @@
 }
 
 
+
   </script>
 
 </body>
 </html>
+
 
  
 
